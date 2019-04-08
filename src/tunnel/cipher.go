@@ -56,6 +56,9 @@ func newAES256CFBCipher(secret []byte) (*Cipher, error) {
 }
 
 func NewCipher(cryptoMethod string, secret []byte) *Cipher {
+    if cryptoMethod == "" {
+        return nil
+    }
     cc := cipherMap[cryptoMethod]
     if cc == nil {
         log.Fatalf("unsupported crypto method %s", cryptoMethod)
