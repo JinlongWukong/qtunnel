@@ -58,7 +58,7 @@ func (t *Tunnel) transport(conn net.Conn) {
     }
     connectTime := time.Now().Sub(start)
     start = time.Now()
-    cipher := NewCipher(t.cryptoMethod, t.secret)
+    //cipher := NewCipher(t.cryptoMethod, t.secret)
     readChan := make(chan int64)
     writeChan := make(chan int64)
     var readBytes, writeBytes int64
